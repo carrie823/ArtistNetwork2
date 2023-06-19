@@ -19,7 +19,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: process.env.ORIGIN,
   credentials: true,            //access-control-allow-credentials:true
   optionSuccessStatus: 200
 }
