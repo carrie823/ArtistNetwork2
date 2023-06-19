@@ -4,7 +4,8 @@
   "description": "capstone project 2023",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Carrie Ng",
   "license": "ISC",
