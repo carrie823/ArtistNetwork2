@@ -1,4 +1,5 @@
 const path = require('path');
+const test = require('dotenv').config();
 const express = require("express");
 const multer = require('multer');
 const bcrypt = require('bcrypt');
@@ -6,7 +7,7 @@ let upload = multer({ dest: path.join(__dirname, 'uploads') });
 const { MongoClient, ObjectId } = require("mongodb")
 
 //Mongo
-const dbUrl = "mongodb://localhost:27017/artistnetworkdb";
+const dbUrl = process.env.MONGO_URL;
 const client = new MongoClient(dbUrl);
 
 //set up Express App
@@ -207,7 +208,7 @@ app.get("/api/sale/:id/", function (req, res, next) {
 
 app.post('/api/images/sales/', isAuthenticated, upload.single('image'), function (req, res, next) {
 
-  let image = { title: req.body.title, "description": req.body.description, "link": req.body.link, "image": req.file, "likes": 0, "username": req.body.username};
+  let image = { title: req.body.title, "description": req.body.description, "link": req.body.link, "image": req.file, "likes": 0, "username": req.body.username };
 
   if (req.session.user.username !== req.body.username && req.session.user.username !== "admin") {
     res.status(400)
