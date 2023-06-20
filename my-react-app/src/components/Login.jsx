@@ -44,12 +44,12 @@ console.log("heheheh")
     let user = userVal;
     console.log(user)
 
-    if (response.status === 400) {
-      nameRef.current.focus();
-      setMsg('Incorrect username or password');
-      console.log("heeeeleleoeoeo");
+    // if (response.status === 400) {
+    //   nameRef.current.focus();
+    //   setMsg('Incorrect username or password');
+    //   console.log("heeeeleleoeoeo");
 
-    } 
+    // } 
 
     let bodyX = { username: user, password: pass }
 
