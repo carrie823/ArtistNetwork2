@@ -37,7 +37,7 @@ app.use(session({
   proxy: true,
   cookie: {
     sameSite: 'none',
-    secure: true
+    secure: false
   }
 }));
 
@@ -151,7 +151,7 @@ app.post("/login", function (request, response) {
             maxAge: 60 * 60 * 24 * 7,
             proxy: true,
             sameSite: 'none',
-            secure: true
+            secure: false
           }));
           response.status(200)
 
