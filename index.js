@@ -35,7 +35,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    samesite : 'none'
+    sameSite: 'none'
   }
 }));
 
