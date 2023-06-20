@@ -32,8 +32,9 @@ export function Login() {
       else if (response.status === 400){
         console.log("ghghghghgh")
         setMsg('Incorrect username or password');
+        return response.json();
       }
-      return response.json();
+      // return response.json();
     })
   }
 
@@ -44,12 +45,11 @@ console.log("heheheh")
     let user = userVal;
     console.log(user)
 
-    // if (response.status === 400) {
-    //   nameRef.current.focus();
-    //   setMsg('Incorrect username or password');
-    //   console.log("heeeeleleoeoeo");
-
-    // } 
+  // if (response.status === 400) {
+  //   nameRef.current.focus();
+  //   setMsg('Incorrect username or password');
+  //   console.log("heeeeleleoeoeo");
+  // } 
 
     let bodyX = { username: user, password: pass }
 
