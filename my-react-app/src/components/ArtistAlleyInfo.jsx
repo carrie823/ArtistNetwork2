@@ -22,7 +22,7 @@ export default function ArtistAlleyInfo() {
   useEffect(() => {
     // var temp = send("")
     let userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    fetch(`http://artbycnstudio.com/sale/user/${userCookie}/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/api/sale/user/${userCookie}/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
