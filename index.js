@@ -150,7 +150,7 @@ app.post("/login", function (request, response) {
             path: '/',
             maxAge: 60 * 60 * 24 * 7,
             proxy: true,
-            sameSite: 'none',
+            sameSite: 'lax',
             secure: false
           }));
           response.status(200)
