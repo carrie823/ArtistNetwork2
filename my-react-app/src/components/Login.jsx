@@ -29,7 +29,7 @@ export function Login() {
         nav("/homefeed")
         return response.json()
       } 
-      else if (response.status === 400){
+      else if (response.status === 401){
         console.log("ghghghghgh")
         setMsg('Incorrect username or password');
         return response.json();
