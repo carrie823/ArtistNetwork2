@@ -36,7 +36,7 @@ app.use(session({
   saveUninitialized: true,
   proxy: true,
   cookie: {
-    SameSite: 'none'
+    sameSite: 'none',
   }
 }));
 
@@ -147,7 +147,8 @@ app.post("/login", function (request, response) {
           console.log(username.username)
           response.setHeader('Set-Cookie', cookie.serialize('username', username.username, {
             path: '/',
-            maxAge: 60 * 60 * 24 * 7
+            maxAge: 60 * 60 * 24 * 7,
+            sameSite: 'none'
           }));
           response.status(200)
 
