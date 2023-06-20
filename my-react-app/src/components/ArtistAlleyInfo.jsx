@@ -73,9 +73,11 @@ export default function ArtistAlleyInfo() {
   }
 
   function shopSite() {
-    window.location.href = new URL(`${website}`).toString()
-
-    // return null;
+    if (!website.startsWith('http://') && !website.startsWith('https://')) {
+      window.location.href = 'https://' + website
+    } else {
+      window.location.href = website
+    }
   }
 
   function changePrevData() {

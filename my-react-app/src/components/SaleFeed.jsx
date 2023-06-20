@@ -49,8 +49,11 @@ export default function SaleFeed() {
   }, []);
 
   function shopSite() {
-    window.location.href = `${website}`;
-    return null;
+    if (!website.startsWith('http://') && !website.startsWith('https://')) {
+      window.location.href = 'https://' + website
+    } else {
+      window.location.href = website
+    }
   }
 
   function changePrevData() {
