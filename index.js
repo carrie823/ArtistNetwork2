@@ -149,6 +149,7 @@ app.post("/login", function (request, response) {
           response.setHeader('Set-Cookie', cookie.serialize('username', username.username, {
             path: '/',
             maxAge: 60 * 60 * 24 * 7,
+            proxy: true,
             sameSite: 'lax',
             secure: false
           }));
