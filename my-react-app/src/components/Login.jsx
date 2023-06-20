@@ -53,7 +53,7 @@ console.log("heheheh")
 
     let bodyX = { username: user, password: pass }
 
-    send("POST", "http://localhost:3001/login/", bodyX, false, function (event) {
+    send("POST", "http://localhost:3001/api/login/", bodyX, false, function (event) {
 
       if (event) {
         nav("/homefeed")

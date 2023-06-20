@@ -12,19 +12,13 @@ const client = new MongoClient(dbUrl);
 
 //set up Express App
 const app = express();
+app.use(express.static(path.join(__dirname, 'my-react-app', 'build')))
 const port = process.env.PORT || 3001;
 
 const http = require("http");
-var cors = require('cors')
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const corsOptions = {
-  origin: [process.env.ORIGIN, "http://127.0.0.1:3000"],
-  credentials: true,            //access-control-allow-credentials:true
-  optionSuccessStatus: 200
-}
-app.use(cors(corsOptions));
 
 
 const cookie = require('cookie');
@@ -47,7 +41,7 @@ var isAuthenticated = function (req, res, next) {
   next();
 };
 
-app.get("/auth", function (req, response) {
+app.get("/api/auth", function (req, response) {
   console.log(req.session.username);
   if (req.session.user) {
     response.status(200).send("success")
@@ -69,25 +63,25 @@ app.use(function (req, res, next) {
 
 
 //test Express App
-app.get("/", async (request, response) => {
-  response.status(200).send("Test page1");
-  await getUsers();
-})
+// app.get("/", async (request, response) => {
+//   response.status(200).send("Test page1");
+//   await getUsers();
+// })
 
-app.get("/artistalley", async (request, response) => {
-  response.status(200).send("Test page2");
-  await getSales();
-})
-
-
-app.get("/studiospace", async (request, response) => {
-  response.status(200).send("Test page4");
-  await getArtworks();
-})
+// app.get("/artistalley", async (request, response) => {
+//   response.status(200).send("Test page2");
+//   await getSales();
+// })
+//
+//
+// app.get("/studiospace", async (request, response) => {
+//   response.status(200).send("Test page4");
+//   await getArtworks();
+// })
 
 
 //Signup
-app.post("/signup", function (request, res) {
+app.post("/api/signup", function (request, res) {
 
   let username = request.body.username;
   let password = request.body.password;
@@ -122,7 +116,7 @@ app.post("/signup", function (request, res) {
 })
 
 //login endpoint
-app.post("/login", function (request, response) {
+app.post("/api/login", function (request, response) {
 
   // b = request.body;
 
@@ -167,7 +161,7 @@ app.post("/login", function (request, response) {
 })
 
 //Signout 
-app.get('/signout', function (req, res, next) {
+app.get('/api/signout', function (req, res, next) {
   req.session.destroy();
   res.setHeader('Set-Cookie', cookie.serialize('username', '', {
     path: '/',
@@ -503,8 +497,13 @@ app.patch("/api/sale/:id/", function (req, res, next) {
       }
     })
 
+
   })
 })
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "my-react-app", "build", "index.html"));
+});
 
 //set up server listening
 app.listen(port, () => {

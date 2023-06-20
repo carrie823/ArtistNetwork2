@@ -5,7 +5,7 @@ export default function Nav() {
 
   const nav = useNavigate();
   function sendData() {
-    fetch(`http://localhost:3001/signout`, {
+    fetch(`http://localhost:3001/api/signout`, {
       method: 'GET',
       credentials: 'include',
       headers: {
