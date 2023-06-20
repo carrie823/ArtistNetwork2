@@ -34,6 +34,10 @@ app.use(session({
   secret: 'This is the secret',
   resave: false,
   saveUninitialized: true,
+  proxy: true,
+  cookie: {
+    sameSite: 'none'
+  }
 }));
 
 
@@ -51,17 +55,6 @@ app.get("/auth", function (req, response) {
     response.status(404).send("failure")
   }
 })
-
-
-// app.get("/authUser", function (req, response) {
-//   console.log(req.session.username);
-//   if (req.session.user) {
-//     response.status(200).send(req.username)
-//   } else {
-//     response.status(404).send("failure")
-//   }
-// })
-
 
 
 
