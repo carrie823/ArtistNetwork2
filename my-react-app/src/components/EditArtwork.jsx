@@ -38,7 +38,7 @@ export default function EditArtwork() {
 
     let updatedItemData = { "title": titleVal, "description": descriptionVal }
     console.log(location)
-    fetch(`http://artbycnstudio.com/items/updateart/${location.state._id}`, {
+    fetch(`http://artbycnstudio.com/api/items/updateart/${location.state._id}`, {
       method: 'PUT',
       credentials: 'include',
       headers: {
