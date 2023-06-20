@@ -27,11 +27,7 @@ const session = require('express-session');
 app.use(session({
   secret: 'This is the secret',
   resave: false,
-  saveUninitialized: true,
-  proxy: true,
-  cookie: {
-    sameSite: 'none'
-  }
+  saveUninitialized: true
 }));
 
 
