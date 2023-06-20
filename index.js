@@ -36,7 +36,7 @@ app.use(session({
   saveUninitialized: true,
   proxy: true,
   cookie: {
-    sameSite: 'none',
+    sameSite: 'lax',
     secure: false
   }
 }));
@@ -149,7 +149,7 @@ app.post("/login", function (request, response) {
           response.setHeader('Set-Cookie', cookie.serialize('username', username.username, {
             path: '/',
             maxAge: 60 * 60 * 24 * 7,
-            sameSite: 'none',
+            sameSite: 'lax',
             secure: false
           }));
           response.status(200)
