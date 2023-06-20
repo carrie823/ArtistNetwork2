@@ -8,10 +8,10 @@ export default function footer() {
         <NavLink to="/homefeed">Artist Network <i class="fa-solid fa-pencil"></i></NavLink>
       </div>
       <div class="social-icons">
-          <a href='twitter.com'><i class="fa-brands fa-twitter"></i></a>
-          <a href='facebook.com'><i class="fa-brands fa-facebook"></i></a>
-          <a href='instagram.com'><i class="fa-brands fa-instagram"></i></a>
-          </div>
+        <a href='https://twitter.com/'><i class="fa-brands fa-twitter"></i></a>
+        <a href='https://www.facebook.com/'><i class="fa-brands fa-facebook"></i></a>
+        <a href='https://www.instagram.com/'><i class="fa-brands fa-instagram"></i></a>
+      </div>
       <div>
         <p>© Copyright 2023 Artist Network</p>
       </div>

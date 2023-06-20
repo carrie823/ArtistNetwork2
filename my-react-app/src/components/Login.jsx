@@ -90,9 +90,9 @@ console.log("heheheh")
             <button onClick={() => nav('/signup')}>Sign Up</button>
           </div>
           <div class="social-icons-login">
-          <a href='twitter.com'><i class="fa-brands fa-twitter"></i></a>
-          <a href='facebook.com'><i class="fa-brands fa-facebook"></i></a>
-          <a href='instagram.com'><i class="fa-brands fa-instagram"></i></a>
+          <a href='https://twitter.com/'><i class="fa-brands fa-twitter"></i></a>
+          <a href='https://www.facebook.com/'><i class="fa-brands fa-facebook"></i></a>
+          <a href='https://www.instagram.com/'><i class="fa-brands fa-instagram"></i></a>
           </div>
         </div>
       </div>
