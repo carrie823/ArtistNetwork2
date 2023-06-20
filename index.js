@@ -36,7 +36,7 @@ app.use(session({
   saveUninitialized: true,
   proxy: true,
   cookie: {
-    samesite: 'none'
+    SameSite: 'none'
   }
 }));
 
