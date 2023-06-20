@@ -36,8 +36,8 @@ app.use(session({
   saveUninitialized: true,
   proxy: true,
   cookie: {
-    sameSite: 'lax',
-    secure: false
+    sameSite: 'none',
+    secure: true
   }
 }));
 
@@ -150,8 +150,8 @@ app.post("/login", function (request, response) {
             path: '/',
             maxAge: 60 * 60 * 24 * 7,
             proxy: true,
-            sameSite: 'lax',
-            secure: false
+            sameSite: 'none',
+            secure: true
           }));
           response.status(200)
 
