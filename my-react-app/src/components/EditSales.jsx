@@ -47,7 +47,7 @@ export default function EditSales() {
 
     let updatedItemData = { "title": titleVal, "description": descriptionVal, "link": linkVal }
     console.log(location)
-    fetch(`http://localhost:3001/api/items/updatesale/${location.state._id}`, {
+    fetch(`http://artbycnstudio.com/api/items/updatesale/${location.state._id}`, {
       method: 'PUT',
       credentials: 'include',
       headers: {

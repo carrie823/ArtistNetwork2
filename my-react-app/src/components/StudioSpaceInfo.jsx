@@ -20,7 +20,7 @@ export default function StudioSpaceInfo() {
 
   useEffect(() => {
     let userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    fetch(`http://localhost:3001/api/art/user/${userCookie}/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/api/art/user/${userCookie}/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -41,14 +41,14 @@ export default function StudioSpaceInfo() {
           setUsername(j[0].username)
           // setName(j[0].name)
           //console.log(j[0].likes)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
         })
       }
     })
   }, []);
 
   function sendDelete() {
-    fetch(`http://localhost:3001/api/items/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/items/${id}/`, {
       method: 'DELETE',
       credentials: 'include',
       mode: 'cors',
@@ -76,7 +76,7 @@ export default function StudioSpaceInfo() {
     if (n < 0) {
 
     } else {
-      fetch(`http://localhost:3001/api/art/user/${userCookie}/?page=${n}`, {
+      fetch(`http://artbycnstudio.com/api/art/user/${userCookie}/?page=${n}`, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -92,7 +92,7 @@ export default function StudioSpaceInfo() {
             setLikes(j[0].likes)
             setID(j[0]._id)
             setUsername(j[0].username)
-            setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+            setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
             setPage(n)
             // setName(j[0].name)
           })
@@ -104,7 +104,7 @@ export default function StudioSpaceInfo() {
   function changeNextData() {
     let userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     let n = page + 1
-    fetch(`http://localhost:3001/api/art/user/${userCookie}/?page=${n}`, {
+    fetch(`http://artbycnstudio.com/api/art/user/${userCookie}/?page=${n}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -120,7 +120,7 @@ export default function StudioSpaceInfo() {
           setLikes(j[0].likes)
           setID(j[0]._id)
           setUsername(j[0].username)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
           setPage(n)
           // setName(j[0].name)
         })
@@ -132,7 +132,7 @@ export default function StudioSpaceInfo() {
 
     let n = likes + 1
 
-    fetch(`http://localhost:3001/api/art/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/art/${id}/`, {
       method: "PATCH",
       mode: 'cors',
       headers: {
@@ -164,7 +164,7 @@ export default function StudioSpaceInfo() {
       <div><h1>{noImage}</h1></div>
       {/* <div><h1>{name}</h1></div> */}
       <div><h2>{username}</h2></div>
-      <div><img src={image} width="400"/></div>
+      <div><img src={image} width="400" /></div>
       <div><h1>{title}</h1></div>
       <div><h2>{desc}</h2></div>
       <div class="likes">

@@ -32,7 +32,7 @@ export function SearchSS() {
     if (n < 0) {
 
     } else {
-      fetch(`http://localhost:3001/api/art/user/${search}/?page=${n}`, {
+      fetch(`http://artbycnstudio.com/api/art/user/${search}/?page=${n}`, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -48,7 +48,7 @@ export function SearchSS() {
             setLikes(j[0].likes)
             setID(j[0]._id)
             setUsername(j[0].username)
-            setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+            setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
             setPage(n)
             // setName(j[0].name)
           })
@@ -60,7 +60,7 @@ export function SearchSS() {
   function changeNextData() {
 
     let n = page + 1
-    fetch(`http://localhost:3001/api/art/user/${search}/?page=${n}`, {
+    fetch(`http://artbycnstudio.com/api/art/user/${search}/?page=${n}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -76,7 +76,7 @@ export function SearchSS() {
           setLikes(j[0].likes)
           setID(j[0]._id)
           setUsername(j[0].username)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
           setPage(n)
           // setName(j[0].name)
         })
@@ -88,7 +88,7 @@ export function SearchSS() {
 
     let n = likes + 1
 
-    fetch(`http://localhost:3001/api/art/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/art/${id}/`, {
       method: "PATCH",
       mode: 'cors',
       headers: {
@@ -105,7 +105,7 @@ export function SearchSS() {
 
   function sendSearch() {
     let query = search
-    fetch(`http://localhost:3001/api/art/user/${query}/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/api/art/user/${query}/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -126,7 +126,7 @@ export function SearchSS() {
           setUsername(j[0].username)
           // setName(j[0].name)
           //console.log(j[0].likes)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
         })
       }
     })

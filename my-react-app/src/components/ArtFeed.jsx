@@ -20,7 +20,7 @@ export default function ArtFeed() {
 
   useEffect(() => {
     setUsername(userCookie)
-    fetch(`http://localhost:3001/api/art/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/api/art/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -40,7 +40,7 @@ export default function ArtFeed() {
           setID(j[0]._id)
           //console.log(j[0].likes)
           setArtist(j[0].username)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
         })
       }
     })
@@ -51,7 +51,7 @@ export default function ArtFeed() {
     if (n < 0) {
 
     } else {
-      fetch(`http://localhost:3001/api/art/?page=${n}`, {
+      fetch(`http://artbycnstudio.com/api/art/?page=${n}`, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -67,7 +67,7 @@ export default function ArtFeed() {
             setLikes(j[0].likes)
             setID(j[0]._id)
             setArtist(j[0].username)
-            setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+            setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
             setPage(n)
           })
         }
@@ -77,7 +77,7 @@ export default function ArtFeed() {
 
   function changeNextData() {
     let n = page + 1
-    fetch(`http://localhost:3001/api/art/?page=${n}`, {
+    fetch(`http://artbycnstudio.com/api/art/?page=${n}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -93,7 +93,7 @@ export default function ArtFeed() {
           setLikes(j[0].likes)
           setID(j[0]._id)
           setArtist(j[0].username)
-          setImage(`http://localhost:3001/api/art/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/art/${j[0]._id}`)
           setPage(n)
         })
       }
@@ -104,7 +104,7 @@ export default function ArtFeed() {
 
     let n = likes + 1
 
-    fetch(`http://localhost:3001/api/art/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/art/${id}/`, {
       method: "PATCH",
       mode: 'cors',
       headers: {

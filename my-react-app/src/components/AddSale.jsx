@@ -84,7 +84,7 @@ export default function AddSale() {
 
     let bodyX = { "title": title, "description": desc, "link": link, image: imageX, "username": username }
 
-    sendFiles("POST", "http://localhost:3001/api/images/sales", bodyX, false, function (event) {
+    sendFiles("POST", "http://artbycnstudio.com/api/images/sales", bodyX, false, function (event) {
       console.log(event)
       if (event) {
         return event;

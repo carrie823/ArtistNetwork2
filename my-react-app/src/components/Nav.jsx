@@ -5,7 +5,7 @@ export default function Nav() {
 
   const nav = useNavigate();
   function sendData() {
-    fetch(`http://localhost:3001/api/signout`, {
+    fetch(`http://artbycnstudio.com/api/signout`, {
       method: 'GET',
       credentials: 'include',
       headers: {

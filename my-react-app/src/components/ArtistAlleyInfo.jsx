@@ -22,7 +22,7 @@ export default function ArtistAlleyInfo() {
   useEffect(() => {
     // var temp = send("")
     let userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    fetch(`http://localhost:3001/api/sale/user/${userCookie}/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/sale/user/${userCookie}/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -43,14 +43,14 @@ export default function ArtistAlleyInfo() {
           setID(j[0]._id)
           setName(j[0].name)
           setUsername(j[0].username)
-          setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
         })
       }
     })
   }, []);
 
   function sendDelete() {
-    fetch(`http://localhost:3001/api/items/sale/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/items/sale/${id}/`, {
       method: 'DELETE',
       credentials: 'include',
       mode: 'cors',
@@ -83,7 +83,7 @@ export default function ArtistAlleyInfo() {
     if (n < 0) {
 
     } else {
-      fetch(`http://localhost:3001/api/sale/user/${userCookie}/?page=${n}`, {
+      fetch(`http://artbycnstudio.com/api/sale/user/${userCookie}/?page=${n}`, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -101,7 +101,7 @@ export default function ArtistAlleyInfo() {
             setLink(j[0].link)
             setName(j[0].name)
             setUsername(j[0].username)
-            setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+            setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
             setPage(n)
           })
         }
@@ -112,7 +112,7 @@ export default function ArtistAlleyInfo() {
   function changeNextData() {
     let userCookie = document.cookie.replace(/(?:(?:^|.*;\s*)username\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     let n = page + 1
-    fetch(`http://localhost:3001/api/sale/user/${userCookie}/?page=${n}`, {
+    fetch(`http://artbycnstudio.com/api/sale/user/${userCookie}/?page=${n}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -130,7 +130,7 @@ export default function ArtistAlleyInfo() {
           setLink(j[0].link)
           setName(j[0].name)
           setUsername(j[0].username)
-          setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
           setPage(n)
         })
       }
@@ -141,7 +141,7 @@ export default function ArtistAlleyInfo() {
 
     let n = likes + 1
 
-    fetch(`http://localhost:3001/api/sale/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/sale/${id}/`, {
       method: "PATCH",
       mode: 'cors',
       headers: {
@@ -171,7 +171,7 @@ export default function ArtistAlleyInfo() {
       </div>
       <div><h1>{noImage}</h1></div>
       <div><h2>{username}</h2></div>
-      <div><img src={image} width="400"/></div>
+      <div><img src={image} width="400" /></div>
       <div><h1>{title}</h1></div>
       <div><h2>{desc}</h2></div>
       {/* <div><button onClick={() => shopSite()}>Shop Here</button></div> */}

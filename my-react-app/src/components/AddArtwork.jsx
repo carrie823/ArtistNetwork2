@@ -72,7 +72,7 @@ export default function AddArtwork() {
 
     let bodyX = { "title": title, "description": desc, "image": image, "username": username }
 
-    sendFiles("POST", "http://localhost:3001/api/images/arts", bodyX, false, function (event) {
+    sendFiles("POST", "http://artbycnstudio.com/api/images/arts", bodyX, false, function (event) {
       if (event) {
         return event;
       }

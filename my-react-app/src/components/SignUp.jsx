@@ -88,7 +88,7 @@ export function SignUp() {
   
     let bodyX = { name: nameX, email: email, username: user, password: pass, copyright: copyright }
 
-    send("POST", "http://localhost:3001/api/signup/", bodyX, false, function (event) {
+    send("POST", "http://artbycnstudio.com/api/signup/", bodyX, false, function (event) {
       console.log(event)
       if (event) {
 

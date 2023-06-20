@@ -21,7 +21,7 @@ export default function SaleFeed() {
   useEffect(() => {
     // var temp = send("")
 
-    fetch(`http://localhost:3001/api/sale/?page=${page}`, {
+    fetch(`http://artbycnstudio.com/api/sale/?page=${page}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -42,7 +42,7 @@ export default function SaleFeed() {
           setID(j[0]._id)
           setArtist(j[0].username)
           setLink(j[0].link)
-          setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
         })
       }
     })
@@ -58,7 +58,7 @@ export default function SaleFeed() {
     if (n < 0) {
 
     } else {
-      fetch(`http://localhost:3001/api/sale/?page=${n}`, {
+      fetch(`http://artbycnstudio.com/api/sale/?page=${n}`, {
         method: "GET",
         mode: 'cors',
         headers: {
@@ -75,7 +75,7 @@ export default function SaleFeed() {
             setID(j[0]._id)
             setLink(j[0].link)
             setArtist(j[0].username)
-            setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+            setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
             setPage(n)
           })
         }
@@ -85,7 +85,7 @@ export default function SaleFeed() {
 
   function changeNextData() {
     let n = page + 1
-    fetch(`http://localhost:3001/api/sale/?page=${n}`, {
+    fetch(`http://artbycnstudio.com/api/sale/?page=${n}`, {
       method: "GET",
       mode: 'cors',
       headers: {
@@ -102,7 +102,7 @@ export default function SaleFeed() {
           setID(j[0]._id)
           setLink(j[0].link)
           setArtist(j[0].username)
-          setImage(`http://localhost:3001/api/sale/${j[0]._id}`)
+          setImage(`http://artbycnstudio.com/api/sale/${j[0]._id}`)
           setPage(n)
         })
       }
@@ -113,7 +113,7 @@ export default function SaleFeed() {
 
     let n = likes + 1
 
-    fetch(`http://localhost:3001/api/sale/${id}/`, {
+    fetch(`http://artbycnstudio.com/api/sale/${id}/`, {
       method: "PATCH",
       mode: 'cors',
       headers: {
